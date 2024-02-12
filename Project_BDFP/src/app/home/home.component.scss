@@ -1,0 +1,288 @@
+.logo {
+    text-align: center;
+    padding-top: 50px;
+}
+
+.bt{
+    // justify-content: center;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    z-index: 2;
+    transition: 0.4s;
+    background-color: transparent;
+    color: white;
+    &:hover {
+        color: orange;
+    }
+}
+
+#ajout {
+    width: 100%;
+    // position: absolute;
+    // float : right;
+    transition: 0.4s;
+    background-color: black;
+    color: white;
+    &:hover {
+        color: orange;
+    }
+}
+
+#recherche {
+    // margin: 50px auto auto 10px;
+    transition: 0.4s;
+    background-color: black;
+    color: orange;
+    
+}
+
+
+.butAjout {
+    display: inline;
+    vertical-align: baseline;
+    margin-right: 10px;
+    // margin-top: 20px;
+    margin-bottom: 5px;
+    color: white; 
+    transition: 0.4s;
+    background-color: rgb(50, 50, 50);
+}
+//    animation: blink 1s infinite;
+
+// @keyframes blink {
+//     0% {background-color: black;}
+//     50% {background-color: orange;}
+//     100% {background-color: rgb(39,39,39);}
+// }
+
+.butAjout:hover {
+    color: orange;
+    animation: none;
+}
+
+
+h1 {
+    border-style: solid;
+    border-color: orange;
+    border-radius: 30px;
+    padding: 5px 30px 5px 30px;
+    color: orange;
+    margin: 10px 10px 0px 20px ;
+    width: 300px;
+    text-align: center;
+}
+
+#butRecherche {
+    margin-left: 20px;
+    border: solid white;
+    border-radius: 8px;
+    transition: 0.4s;
+    margin-left: 60px;
+
+    &:hover {
+        border-radius: 14px;
+        background-color: rgb(240, 240, 240);
+    }
+}
+
+#glob {
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+}
+
+#cherche {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    height: auto;
+    width: 40%;
+    margin-top: 7em;
+    transition: 0.5s;
+}
+
+.form-card {
+    box-sizing: border-box;
+    width: 10%;
+    margin: 20px auto;
+    box-shadow: lightgray 4px 4px 20px;
+    
+    box-shadow: rgb(48, 19, 117) 4px 4px 20px;
+    border: solid rgb(5, 4, 88);
+  
+    border-radius: 30px;
+    
+  }
+
+.form-group {
+    margin: 10px auto;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: auto;
+    flex-wrap: wrap;
+}
+
+.action-buttons {
+    width: 100%;
+}
+
+.buttonR{
+    display: block;
+    margin: 20px auto;
+    
+}
+
+//compteur de films
+#compteur {
+    position: absolute;
+    right: 0;
+    display:inline;
+    min-width: 100px;
+    box-sizing: border-box;
+    width: 10%;
+    margin: 0px 30px 15px auto;
+    padding: 5px;
+    //box-shadow: orange 4px 4px 15px;
+    border-radius: 30px;
+    background-color: rgba(212, 211, 211, 0.06);
+    align-items: center;
+}
+
+header {
+    margin : 0 auto;
+    text-align: center;
+}
+
+#icone {
+    transform: scale(1.3);
+    margin : 10px;
+    background-color: orange;
+    border-radius: 60px;
+    padding: 5px;
+    color:black;
+}
+
+  #centre {
+    margin : 0 auto;
+    text-align: center;
+  }
+  
+  #centre h2 {
+    font-size: 30px;
+    margin : 0px;
+    color: white ;
+  }
+
+  #centre p {
+    color : rgba(255, 255, 255, 0.313)
+  }
+
+  #butRecherche {
+    border: solid black;
+    border-radius: 8px;
+    transition: 0.4s;
+    margin-left: 60px;
+
+    &:hover {
+        border-radius: 14px;
+        background-color: rgb(240, 240, 240);
+    }
+}
+
+#cherche {
+    height: auto;
+    width: 60%;
+    margin-top: 7em;
+    transition: 0.5s;
+    background-color: black;
+    border: solid 3px black;
+}
+
+.form-card {
+    box-sizing: border-box;
+    width: 10%;
+    margin: 20px auto;
+    background-color: rgb(39,39,39);
+    border: solid 1px white;
+    border-radius: 30px;
+    
+  }
+
+.form-group {
+    margin: 20px auto;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: auto;
+    flex-wrap: wrap;
+    color: white;
+    
+}
+
+.action-buttons {
+    width: 100%;
+}
+
+.buttonR{
+    display: block;
+    margin: 20px auto;
+        background-color: rgb(39,39,39);
+        border: solid black;
+        border-radius: 8px;
+        transition: 0.4s;
+        color: white;
+        
+    
+        &:hover {
+            color: orange;
+           
+        }
+    
+    
+}
+
+
+.field {
+    background-color: rgb(39,39,39);
+    color:white;
+    margin-bottom: 10px;
+}
+
+::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: white !important;
+   }
+  
+   ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: white !important;
+  } 
+  
+  ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: white !important;
+  }
+
+.lab {
+    color: orange;
+}
+
+#close {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#boutonclose {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 450px;
+}
+

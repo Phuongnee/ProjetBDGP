@@ -1,0 +1,146 @@
+<div id="dialog">
+  <h1 mat-dialog-title>Ajouter un livre</h1>
+  <div mat-dialog-content>
+    <div *ngIf="bookError" [ngStyle]="{'color': 'red', 'font-weight': 'bold'}">
+      Livre non reconnu, veuillez essayer autre chose.
+    </div>
+    <div
+      *ngIf="errorMsgBookExists"
+      [ngStyle]="{'color': 'blue', 'font-weight': 'bold'}"
+    >
+      Ce livre existe déjà dans votre répertoire.
+    </div>
+
+    <header>
+      <mat-radio-group id="groupradio" aria-label="Select an option">
+        <mat-radio-button
+          class="radio"
+          value="TMDB"
+          [checked]="true"
+          (click)="changeBoolFalse()"
+          >API GoogleBook</mat-radio-button
+        >
+        <mat-radio-button class="radio" value="OMDB" (click)="changeBoolTrue()"
+          >API LibraryBook</mat-radio-button
+        >
+      </mat-radio-group>
+      <mat-icon
+        id="icone"
+        aria-hidden="false"
+        matTooltip="TMDB et OMDB sont deux bases de données en ligne qui fournissent des informations sur les films.
+        Si TMDB ne dispose pas du film que vous recherchez, vous pouvez cocher OMDB comme une autre source. "
+        fontIcon="help_outline"
+      ></mat-icon>
+    </header>
+    <mat-form-field class="field" appearance="fill">
+      <mat-label for="title">Titre</mat-label>
+      <input
+        matInput
+        [(ngModel)]="selectedBook"
+        [matAutocomplete]="auto"
+        [formControl]="searchBooksCtrl"
+        placeholder="Titanic"
+        cdkFocusInitial
+        (change)="removeError()"
+      />
+      <button
+        *ngIf="selectedBook"
+        matSuffix
+        mat-icon-button
+        aria-label="Clear"
+        (click)="clearSelection()"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+      <mat-autocomplete
+        [panelWidth]="400"
+        #auto="matAutocomplete"
+        (optionSelected)="onSelected()"
+        [displayWith]="displayWith"
+      >
+        <mat-option *ngIf="isLoading" class="is-loading"
+          >Chargement...</mat-option
+        >
+        <ng-container *ngIf="!isLoading">
+          <ng-container *ngIf="OPENLIBSelected">
+            <mat-option
+              *ngFor="let movie of filteredBooksOpenLib"
+              [value]="movie"
+            >
+              <span><b>{{movie.Title}}</b> ({{movie.Year}})</span>
+            </mat-option>
+          </ng-container>
+
+          <ng-container *ngIf="!OPENLIBSelected">
+            <mat-option
+              *ngFor="let movie of filteredBooksGGBook"
+              [value]="movie"
+            >
+              <!-- ({{movie.original_title}}) -->
+              <span
+                ><b>{{movie.volumeInfo.title}}</b> -
+                {{movie.volumeInfo.authors}}</span
+              >
+            </mat-option>
+          </ng-container>
+        </ng-container>
+      </mat-autocomplete>
+      <div *ngIf="messError" [ngStyle]="{'color': 'red','margin-top': 0}">
+        Aucun résultat.
+      </div>
+    </mat-form-field>
+
+    <mat-form-field class="field" appearance="fill">
+      <mat-label for="dat">Année de visionnage</mat-label>
+      <input
+        matInput
+        [(ngModel)]="data.dateRead"
+        type="dat"
+        [formControl]="searchControlDate"
+        placeholder="2022"
+      />
+      <mat-error
+        *ngIf="searchControlDate.invalid && (searchControlDate.dirty || searchControlDate.touched)"
+      >
+        ex: 2022
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="field" appearance="fill">
+      <mat-label for="note">Note/5</mat-label>
+      <input
+        matInput
+        [(ngModel)]="data.noteBook"
+        [formControl]="searchControlNote"
+        type="note"
+      />
+      <mat-error
+        *ngIf="searchControlNote.invalid && (searchControlNote.dirty || searchControlNote.touched)"
+      >
+        Entrez un nombre de 0 à 5
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="field" appearance="fill">
+      <mat-label for="avis">Avis</mat-label>
+      <textarea
+        [(ngModel)]="data.avisBook"
+        matInput
+        type="avis"
+        placeholder="Ce film était ....."
+      >
+      </textarea>
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Retour</button>
+    <button
+      mat-button
+      (keyup.enter)="clickButtonChooseAPIINIT()"
+      [disabled]="!searchControlDate.valid || !searchControlNote.valid ||boutonAjoutClicked"
+      (click)="clickButtonChooseAPIINIT()"
+    >
+      Ok
+    </button>
+  </div>
+</div>

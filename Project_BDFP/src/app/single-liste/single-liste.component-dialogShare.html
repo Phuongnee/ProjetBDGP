@@ -1,0 +1,15 @@
+<h1 mat-dialog-title>Partager la liste</h1>
+<div>
+  <p>Email de la personne</p>
+
+  <mat-form-field class="field" appearance="fill" style="width: auto; text-align: center;">
+    <mat-label for="mail">Email</mat-label>
+    <input matInput [(ngModel)]="data.email" type="mail" placeholder="email">
+  </mat-form-field>
+  <mat-error *ngIf="error_message">{{ error_message }}</mat-error>
+
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Retour</button>
+  <button mat-button cdkFocusInitial (click)="partagerListe()">Ok</button>
+</div>

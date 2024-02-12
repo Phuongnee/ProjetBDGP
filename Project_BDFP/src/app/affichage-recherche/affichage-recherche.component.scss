@@ -1,0 +1,78 @@
+#reponse {
+    margin-top: 10px;
+    display: inline-flex;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.form-card {
+      min-width: 450px;
+      box-sizing: border-box;
+      width: 450px;
+      margin: 40px auto 40px auto;
+      padding: 30px;
+      border-radius: 30px;
+      background-color: #3d3d3d;
+      text-align : center;
+}
+.container-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.form-group {
+    margin: 20px auto auto 10px; 
+    display : inline;
+    width: 100%;
+    font-size: small;
+  }
+  
+  input, textarea {
+    width: 50%;
+    color: white;
+  }
+
+  button {
+    align-items: center;
+    display: block;
+    margin : auto;
+    margin-top: 20px;
+    background-color: rgb(39,39,39);
+    border-radius: 8px;
+    transition: 0.4s;
+    color: white;
+    &:hover {
+        color: orange;
+       
+    }
+    
+  }
+
+  .lab {
+    color: white;
+  }
+
+  .icone {
+    cursor:pointer;
+    display: inline;
+    
+}
+
+#cherche {
+  display: block;
+}
+
+#spinner {
+  transform: scale(0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#noResult {
+  text-align: center;
+  color : white;
+}

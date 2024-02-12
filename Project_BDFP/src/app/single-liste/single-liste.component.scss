@@ -1,0 +1,97 @@
+// Bouton de retour
+#butR {
+    color: white; 
+    transition: 0.4s;
+    background-color: rgb(39,39,39);
+    &:hover {
+        color: orange;
+    }
+}
+
+.back{
+    transition: 0.4s;
+    background-color: rgb(39,39,39);
+    color: white;
+    &:hover {
+        color: orange;
+    }
+}
+
+#retour {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 100px auto auto 10px;
+    transition: 0.4s;
+    background-color: rgb(39,39,39);
+    color: white;
+    &:hover {
+        color: orange;
+    }
+}
+
+#bout {
+    justify-content: center;
+    display: flex;
+    margin : 30px auto 30px;
+    transition: 0.4s;
+    background-color: rgb(39,39,39);
+    color: white;
+    &:hover {
+        color: orange;
+    }
+}
+
+#titrelist {
+    text-align: center;
+    font-family: 'Goudy Old Style', monospace; 
+    font-size: 45px; 
+    font-weight: 100; 
+    line-height: 1; /* Notez que j'ai changé la valeur de "line-height" */
+    padding-top: 100px;
+    color: orange;
+    margin: 20px 50px auto 50px;
+    text-transform: uppercase;
+    word-wrap: break-word;
+}
+
+
+
+
+#entier {
+    height: 91.7vh;
+}
+
+#espace {
+    margin-bottom: 4em;
+}
+
+.bt {
+    margin-right: 10px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    color: white; 
+    transition: 0.4s;
+    background-color: rgb(39,39,39);
+    &:hover {
+        color: orange;
+    }
+}
+
+p {
+    margin : auto 20px auto 20px
+}
+
+#ajout {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto auto 10px;
+    transition: 0.4s;
+    background-color: rgb(39,39,39);
+    color: white;
+}
+
+.members{
+    font-size: 15px;
+}

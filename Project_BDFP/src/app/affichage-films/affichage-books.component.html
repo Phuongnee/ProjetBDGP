@@ -1,0 +1,38 @@
+<div id="entier">
+    <div id="aide" *ngIf="noBooks">
+        <h1 id="p1">Click on the button</h1>
+        <button mat-icon-button disabled>
+            <mat-icon>add</mat-icon>
+        </button>
+        <h1 id="p2">to add your first book</h1>
+    </div>
+    <div>
+        <!-- Dropdown Menu -->
+        <div class="menu-deroulant">
+            <mat-form-field appearance="fill" class="custom-form-field">
+                <mat-label>Select</mat-label>
+                <mat-select
+                    [(value)]="selectedCategory"
+                    (selectionChange)="onCategoryChange()"
+                    class="mat-select-value"
+                >
+                    <mat-option value="film">Film</mat-option>
+                    <mat-option value="book">Book</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div *ngIf="!noBooks" class="search-bar">
+            <mat-form-field appearance="fill">
+                <mat-icon matSuffix>search</mat-icon>
+                <input
+                    matInput
+                    type="text"
+                    name="search"
+                    [(ngModel)]="searchText"
+                    autocomplete="off"
+                    placeholder="Search a film, a book..."
+                />
+            </mat-form-field>
+        </div>
+    </div>
+</div>

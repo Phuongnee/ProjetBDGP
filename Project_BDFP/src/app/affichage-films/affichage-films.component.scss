@@ -1,0 +1,148 @@
+.form-group {
+    // margin: 20px auto auto 33%;
+    display: block;
+    align-items: center;
+    justify-content: space-between;
+    font-size: small;
+    width: 100%;
+    // max-width: 550px;
+  }
+
+#aide {
+  margin-top : 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  position: relative;
+
+}
+
+#aide h1 {
+  position : absolute;
+  font-size: small;
+  color : white;
+
+}
+
+#p1 {
+  margin-right: 200px;
+}
+
+#p2 {
+  margin-left : 230px
+}
+
+#aide button {
+  margin-right: 10px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  transform: scale(0.8);
+  position: absolute;
+  top: 0px;
+  color: white; 
+  cursor:default
+}
+
+  ::ng-deep .mat-focused .mat-form-field-label {
+    /*change color of label*/
+    color: white !important;
+   }
+
+   ::ng-deep.mat-form-field-underline {
+    /*change color of underline*/
+    background-color: white !important;
+  }
+
+  ::ng-deep.mat-form-field-ripple {
+   /*change color of underline when focused*/
+   background-color: white !important;
+  }
+
+  input, textarea {
+    width: 100%;
+    color: white;
+    padding-left: 10px;
+    padding-bottom: 10px;
+  }
+
+  .search-bar {
+    margin-top: 50px;
+    margin-bottom: 70px;
+    text-align: center;
+  }
+
+  input::placeholder {
+    color:rgb(141, 141, 141);
+  }
+
+  .custom-form-field {
+    background-color: orange; /* Replace with your desired background color */
+  }
+
+  // .custom-form-field input.mat-input {
+  //   color: white; /* Replace with your desired text color */
+  // }
+
+
+
+  .menu-deroulant {
+    background-color: black;
+    margin-left: 20px;
+    position: absolute;
+  }
+
+.butAjout {
+    margin-right: 10px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+    color: white;
+    transition: 0.4s;
+    background-color: rgb(39,39,39);
+    &:hover {
+        color: orange;
+    }
+}
+
+.bt {
+    display: inline;
+}
+
+#bout {
+    display : inline-block
+}
+
+.carte {
+    width : 150px;
+    margin: 20px;
+    display: inline-flex;
+    z-index: 1;
+  }
+
+  #spinner {
+    transform: scale(0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color : #ffa500
+  }
+
+
+  .mat-progress-spinner::ng-deep circle {
+    stroke: currentColor;
+  }
+/* #btn-container {
+  width: 100%;
+  display: inline-flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.btn-type {
+  
+  width: 70px;
+  border: #ffa500;
+  border-width: 2px !important;
+}
+
+ */

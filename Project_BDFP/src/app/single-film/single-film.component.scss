@@ -1,0 +1,254 @@
+$maincolor : red;
+
+// Bouton de retour
+#butR {
+    display: inline;
+    margin-right: 20px;
+    color: white; 
+    transition: 0.4s;
+    background-color: rgb(39,39,39);
+    &:hover {
+        color: orange;
+    }
+}
+
+.boutonSeul{
+    display: inline-block;
+    transition: 0.4s;
+    background-color: rgb(39,39,39);
+    color: white;
+    &:hover {
+        color: orange;
+    }
+}
+
+#boutons {
+    left: 0;
+    margin: 10px auto 10px 10px;
+    transition: 0.4s;
+    color: white;
+    &:hover {
+        color: orange;
+    }
+}
+
+// tout le reste
+p {
+    display: inline;
+    font-family : 'Times New Roman', Times, serif;
+    max-width: 100%;
+}
+#film {
+    display: flex;
+    color : white;
+    width: 100%;
+    height: auto;
+}
+
+#leposter {
+    margin-top: 70px;
+    margin-left: 50px;
+    text-align: left;
+}
+
+#images {
+    width:100%;
+    height:auto;
+    margin-left: 5px;
+    margin-bottom: 10px;
+    min-width: 300px;
+    margin-top: -20px;
+}
+
+#titre {
+    width: 100%;
+    margin-top: 50px;
+    font-size: 40px;
+    font-weight: bold;
+    margin-left: 30px;
+    line-height: normal;
+}
+
+#details {
+    overflow: hidden;
+    width : 100%;
+    margin: 10px 30px 30px 30px;
+    padding: 5px;
+}
+
+#entete h1 {
+    display: inline;
+    font-size: medium;
+    border-style: solid;
+    border-color: orange;
+    border-radius: 30px;
+    padding: 5px 10px 5px 10px;
+    color: orange;
+    margin: 0px 20px 0px 20px ;
+    width: 100px;
+    text-align: center;
+}
+
+#supp {
+    display: inline;
+    transition: 0.4s;
+    background-color: rgb(39,39,39);
+    border: solid 3px white;
+    margin-left: 10px;
+    border-radius: 28px;
+    color: white;
+    padding: 5px 10px 5px 10px;
+    
+    &:hover {
+        border: solid orange;
+    }
+}
+
+#entete {
+    margin : 10px 20px 0px 20px;
+} 
+
+.icone {
+    display: inline;
+    margin : 10px;
+    background-color: rgb(255, 255, 255);
+    border-radius: 60px;
+    padding: 5px;
+    text-align: center;
+    color:orange;
+}
+
+.bold {
+    display: inline;
+    color: orange;
+}
+
+#soustitre {
+    display: inline-flex;
+    color: rgb(212, 212, 212);
+    margin-left: 30px;
+}
+
+.infos {
+    margin-left: 10px;
+    margin-bottom: 20px;
+    font-size: medium;   
+}
+
+
+hr {
+    margin: 40px 0px 40px 0px;
+    width: 100%;
+}
+
+#wrapper2 {
+    display: grid;
+    grid-template-columns: 800px;
+    grid-auto-rows: minmax(30px, auto);;
+    row-gap: 2em;
+}
+
+
+li {
+    font-family : 'Times New Roman', Times, serif;
+}
+
+#det {
+    border-left: solid orange;
+}
+
+summary {
+    display: inline;
+}
+
+a {
+    color : whitesmoke
+}
+
+.partie {
+    display: inline-block;
+    width: 50%;
+    margin-top : 50px
+  }
+
+#butModif {
+    border-radius: 60px;
+    padding: 2px;
+    margin: 10px auto 10px 150px;
+    transition: 0.4s;
+    background-color: rgb(39,39,39);
+    color: white;
+    &:hover {
+        color: orange;
+    }
+}
+
+h2 {
+    color : orange;
+    margin-left: 100px;
+}
+
+#texte2 {
+    cursor:pointer
+}
+
+.form-group {
+  margin: 20px auto auto 10px; 
+  display : inline-block;
+  width: 50%;
+  font-size: small;
+}
+
+input, textarea {
+  width: 50%;
+  color: rgb(0, 0, 0);
+}
+
+.field {
+    background-color: rgba(255, 255, 255, 0.521);
+}
+
+#boutons {
+    display: block;
+}
+
+#boutons p {
+    color : red;
+    display: inline-block;
+}
+
+#critique {
+    width : 800px;   
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#spinner {
+    transform: scale(0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color : #ffa500
+  }
+
+#cote {
+    display: inline;
+}
+
+/* Style pour le texte de "voir plus" */
+#texte:before {
+    margin-left: 10px;
+    content: "- voir plus -";
+    cursor:pointer;
+    color : orange;
+    margin-left: 150px;
+  }
+  
+  /* Style pour le texte de "voir moins" */
+  details[open] #texte:before {
+    content: "- voir moins -";
+    cursor:pointer;
+    color : orange;
+    margin-left: 150px;
+  }

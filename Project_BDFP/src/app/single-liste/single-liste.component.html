@@ -1,0 +1,50 @@
+<div id="entier">
+    <div id="titrelist">
+        {{currentListe.titrelist}}
+        <br />
+        <div *ngIf="isListCommon" class="members">
+            Collaborateur : {{members}}
+        </div>
+    </div>
+    <div id="retour">
+        <div class="back">
+            <button id="butR" mat-fab  mat-fab (click)="back()">
+                <mat-icon>keyboard_return</mat-icon>
+            </button>
+        </div>
+    </div>
+
+    <div id="bout">
+
+        <div class="bt" *ngIf="!isListShared">
+            <button class="bt" mat-fab matTooltip="Ajouter un film" mat-fab (click)="openDialog()">
+                <mat-icon>add</mat-icon>
+            </button>
+        </div>
+
+        <div class="bt" *ngIf="isListCommon">
+            <button class="bt" mat-fab matTooltip="Ajouter un membre" mat-fab (click)="openAddNewUserDialog()">
+                <mat-icon>person_add</mat-icon>
+            </button>
+        </div>
+
+        <div class="bt">
+            <button class="bt" mat-fab matTooltip="Supprimer la liste" (click)="suppDialog()">
+                <mat-icon>delete</mat-icon>
+            </button>
+        </div>
+
+        <div class="bt">
+            <button class="bt" mat-fab matTooltip="Partager la liste" mat-fab (click)="dialogShare()">
+                <mat-icon>share</mat-icon>
+            </button>
+        </div>
+
+        <div *ngIf="!isListCommon" class="bt">
+            <button class="bt" mat-fab matTooltip="Exporter la liste" mat-fab (click)="export()">
+                <mat-icon> vertical_align_bottom</mat-icon>
+            </button>
+        </div>
+    </div>
+    <app-detail-liste></app-detail-liste>
+</div>

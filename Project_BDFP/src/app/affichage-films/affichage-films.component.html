@@ -1,0 +1,50 @@
+<div id="entier">
+  <div id="aide" *ngIf="noMovies">
+    <h1 id="p1">Cliquez sur le bouton</h1>
+    <button mat-icon-button disabled>
+      <mat-icon>add</mat-icon>
+    </button>
+    <h1 id="p2">pour ajouter votre premier film</h1>
+  </div>
+  <div>
+    <!-- Dropdown Menu -->
+    <div class="menu-deroulant">
+      <mat-form-field appearance="fill" class="custom-form-field">
+        <mat-label>Sélectionner</mat-label>
+        <mat-select
+          [(value)]="selectedCategory"
+          (selectionChange)="onCategoryChange()"
+          class="mat-select-value"
+        >
+          <mat-option value="film">Film</mat-option>
+          <mat-option value="livre">Livre</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div *ngIf="!noMovies" class="search-bar">
+      <mat-form-field appearance="fill">
+        <mat-icon matSuffix>search</mat-icon>
+        <input
+          matInput
+          type="text"
+          name="search"
+          [(ngModel)]="searchText"
+          autocomplete="off"
+          placeholder="Rechercher un film, un livre..."
+        />
+      </mat-form-field>
+      <!-- <div id="btn-container">
+      <button class="btn-type">Livre</button>
+      <button class="btn-type">Film</button>
+    </div> -->
+    </div>
+  </div>
+
+
+  <div id="spinner" *ngIf="spinner">
+    <mat-spinner [ngStyle]="spinnerStyle"></mat-spinner>
+  </div>
+  <div class="carte" *ngFor="let movie of filteredMovies | keyvalue">
+    <app-movie-card [movieData]="movie"></app-movie-card>
+  </div>
+</div>

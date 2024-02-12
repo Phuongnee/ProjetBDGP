@@ -1,0 +1,41 @@
+<div id="entier">
+    <div id="aide" *ngIf="showAide">
+        <h1 id="p1">Cliquez sur le bouton </h1>
+        <button mat-icon-button disabled >
+          <mat-icon>add</mat-icon>
+        </button>
+        <h1 id="p2">pour ajouter votre premier film</h1>
+      </div>
+    <div *ngIf="!showAide" class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-icon matSuffix>search</mat-icon>
+          <input matInput type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Rechercher par titre de film">
+        </mat-form-field>
+    </div>
+    <div id="spinner" *ngIf="loading"><mat-spinner [ngStyle]="spinnerStyle"></mat-spinner></div>
+    <div id="film" *ngFor="let infoMovies of movies | keyvalue | filter: searchText">
+        <div id="leposter" *ngIf="infoMovies">
+            <img src={{infoMovies.value.poster}} id="img">
+        </div>
+        <div>
+
+            <div class="infos" *ngIf="infoMovies">
+                <p><span class="bold">Titre: </span>  {{infoMovies.value.title}}</p>
+                <p><span class="bold">Année de sortie:</span>  {{infoMovies.value.release_date}}</p>
+                <p><span class="bold">Acteurs:</span>  {{infoMovies.value.Actors}}</p>
+                <p><span class="bold">Durée du film:</span> {{infoMovies.value.Runtime}}</p>
+                <p><span class="bold">Synopsys:</span> {{infoMovies.value.Plot}}</p>
+            </div>
+            <ng-container *ngIf="(!infoMovies.value.isInDB && containsPartageePar) || infoMovies.value.isInDB">
+                <button id="supp" mat-button (click)="afficherFilm(infoMovies.key)">Details</button>
+            </ng-container>
+            <button id="supp" mat-raised-button (click)="deleteFromListOrDeleteFromCommonList(infoMovies.key, infoMovies.value.title)">Supprimer le film</button>
+            <ng-container *ngIf="!infoMovies.value.isInDB">
+                <button id="supp" mat-raised-button (click)="addMovieFromSharedListToUser(infoMovies.key, infoMovies.value.tmdbID, infoMovies.value.title)">Ajouter ce film</button>
+            </ng-container>
+            <ng-container *ngIf="!infoMovies.value.isInDB && !containsPartageePar">
+                <p class="aide">Pour accéder aux détails de ce film, vous devez cliquer sur le bouton ajouter ce film</p>
+            </ng-container>
+        </div>
+    </div>
+</div>

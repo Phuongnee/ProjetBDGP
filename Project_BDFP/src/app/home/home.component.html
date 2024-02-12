@@ -1,0 +1,90 @@
+<div class="logo"><img src="../../assets/bdgp3.png" alt="logo" /></div>
+<div class="bt">
+  <button
+    *ngIf="selectedCategory === 'film'"
+    class="butAjout"
+    mat-fab
+    matTooltip="Ajouter un film"
+    mat-fab
+    (click)="openDialog()"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
+  <button
+    *ngIf="selectedCategory === 'livre'"
+    class="butAjout"
+    mat-fab
+    matTooltip="Ajouter un livre"
+    mat-fab
+    (click)="openDialogBook()"
+  >
+    <mat-icon>add</mat-icon>
+  </button>
+  <button
+    class="butAjout"
+    mat-fab
+    matTooltip="Rechercher un film"
+    mat-fab
+    (click)="affichageForm()"
+  >
+    <mat-icon>search</mat-icon>
+  </button>
+</div>
+<div id="ajout">
+  <!-- <div class="bt">
+    <button
+      class="butAjout"
+      mat-fab
+      matTooltip="Ajouter un film"
+      mat-fab
+      (click)="openDialog()"
+    >
+      <mat-icon>add</mat-icon>
+    </button>
+    <button
+      class="butAjout"
+      mat-fab
+      matTooltip="Rechercher un film"
+      mat-fab
+      (click)="affichageForm()"
+    >
+      <mat-icon>search</mat-icon>
+    </button>
+  </div> -->
+  <!--<p>You have {{ numberOfFilms | async }} films.</p>-->
+  <div id="compteur">
+    <header>
+      <mat-icon id="icone">{{ currentIcon }}</mat-icon>
+    </header>
+    <article *ngIf="selectedCategory === 'film' && numberOfFilms" id="centre">
+      <h2>{{ numberOfFilms | async }}</h2>
+      <p>Films vus</p>
+    </article>
+
+    <article *ngIf="selectedCategory === 'livre'" id="centre">
+      <h2>{{ numberOfLivres }}</h2>
+      <p>Livres vus</p>
+    </article>
+  </div>
+</div>
+
+<div id="recherche">
+  <div *ngIf="showFormRecherche">
+    <div id="boutonclose">
+      <button
+        class="butAjout"
+        id="close"
+        mat-fab
+        matTooltip="Fermer le formulaire de recherche"
+        mat-fab
+        (click)="onClose()"
+      >
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <app-affichage-recherche></app-affichage-recherche>
+  </div>
+  <div *ngIf="showResultatRecherche">
+    <app-affichage-films></app-affichage-films>
+  </div>
+</div>

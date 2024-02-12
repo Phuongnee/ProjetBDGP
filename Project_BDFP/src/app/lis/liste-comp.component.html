@@ -1,0 +1,57 @@
+<div id="entier">
+
+    <div *ngIf="!aucuneListe" class="form-group">
+        <mat-form-field appearance="fill">
+          <mat-icon matSuffix>search</mat-icon>
+          <input matInput type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="Rechercher par titre de liste ou de film">
+        </mat-form-field>
+    </div>
+
+
+    <div id="aide" *ngIf="aucuneListe">
+      <h1 id="p1">Cliquez sur le bouton </h1>
+        <button mat-icon-button disabled >
+          <mat-icon>add</mat-icon>
+        </button>
+        <h1 id="p2">pour ajouter votre première liste.</h1>
+      </div>
+
+      <div id="chips" *ngIf="!aucuneListe">
+        <mat-chip-list #chipList aria-label="Choix types de listes">
+          <mat-chip [ngClass]="{'selected': selectedChip === 'all'}" (click)="onClickChip('all')" value="all">Toutes les listes</mat-chip>
+          <mat-chip [ngClass]="{'selected': selectedChip === 'mine'}" (click)="onClickChip('mine')" value="mine">Mes listes</mat-chip>
+          <mat-chip [ngClass]="{'selected': selectedChip === 'shared'}" (click)="onClickChip('shared')" value="shared">Listes partagées</mat-chip>
+          <mat-chip [ngClass]="{'selected': selectedChip === 'common'}" (click)="onClickChip('common')" value="common">Listes collaboratives</mat-chip>
+        </mat-chip-list>
+      </div>
+
+    <div id="spinner" *ngIf="loading"><mat-spinner [ngStyle]="spinnerStyle"></mat-spinner></div>
+    <div id="comp-liste"*ngFor="let liste of showListofFilms | filter:searchText titrelist">
+        <li>{{ liste.titrelist }}</li>
+        <div id="ajout">
+            <div class="add">
+                <button id="butGerer" mat-fab matTooltip="Afficher la liste" mat-fab (click)="gererListe(liste)">
+                    <mat-icon>list</mat-icon>
+                </button>
+                <ng-container *ngIf="liste.shared">
+                    <button id="addSharedListToUserLists" mat-button (click)="addSharedListToUserLists(liste)">Ajouter à mes listes</button>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+    <!-- <div id="comp-liste"*ngFor="let liste of commonList | filter:searchText titrelist">
+        <li>{{ liste.titrelist }}</li>
+        <div id="ajout">
+            <div class="add">
+                <button id="butGerer" mat-fab matTooltip="Afficher la liste" mat-fab (click)="gererListe(liste)">
+                    <mat-icon>list</mat-icon>
+                </button>
+                <ng-container *ngIf="liste.shared">
+                    <button id="addSharedListToUserLists" mat-button (click)="addSharedListToUserLists(liste)">Posséder</button>
+                </ng-container>
+            </div>
+        </div>
+    </div> -->
+</div>
+
+

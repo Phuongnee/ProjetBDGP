@@ -1,0 +1,44 @@
+<div id="entier">
+  <h1 mat-dialog-title>Entrez un titre</h1>
+  <mat-form-field appearance="fill" style="width: auto; text-align: center;"> 
+
+    <mat-label>Choisir un film</mat-label>
+
+    <input type="text"
+
+      placeholder="Choisir un film"
+
+             aria-label="Number"
+
+             matInput
+
+             [formControl]="filmControl"
+
+             [matAutocomplete]="auto"
+
+             [(ngModel)]="filmChoisi">
+
+             <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete" [displayWith]="displayFn" (optionSelected)="onSelected()">
+
+        <mat-option *ngFor="let film of filteredMovies | async" [value]="film">
+
+          {{film.titre}}
+
+        </mat-option>
+
+      </mat-autocomplete>
+
+    </mat-form-field>
+
+
+
+</div>
+
+  <div mat-dialog-actions>
+
+    <button mat-button (click)="onNoClick()">Retour</button>
+
+    <button mat-button [mat-dialog-close]="dataAjout.title" cdkFocusInitial (click)="addMovieToListOrTOCommonList()">Ok</button>
+  </div>
+
+
